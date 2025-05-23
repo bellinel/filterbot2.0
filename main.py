@@ -146,8 +146,8 @@ async def schedule_db_cleaning():
             # Получаем актуальное значение дней для очистки
             days = DB_CLEANUP_DAYS
             # Вычисляем время в секундах
-            # cleanup_seconds = days * 24 * 60 * 60  # дни * 24 часа * 60 минут * 60 секунд
-            cleanup_seconds = 10
+            cleanup_seconds = days * 24 * 60 * 60  # дни * 24 часа * 60 минут * 60 секунд
+            
             
             # Логируем информацию о планируемой очистке
             next_clean_date = datetime.datetime.now() + datetime.timedelta(days=days)
