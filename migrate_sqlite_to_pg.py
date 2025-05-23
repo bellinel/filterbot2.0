@@ -2,7 +2,7 @@ import asyncio
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import select
-from filter import Base, Message, Reklama_filter, NeRelevant_filter  # твои модели
+from database.engine import Base, Message, Reklama_filter, NeRelevant_filter  # твои модели
 
 # SQLite источник
 sqlite_engine = create_async_engine("sqlite+aiosqlite:///bot.db", echo=False)
