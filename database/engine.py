@@ -20,7 +20,7 @@ class Database:
         logger: Логгер для записи событий базы данных
     """
     
-    async def __init__(self):
+    def __init__(self):
         from dotenv import load_dotenv
         load_dotenv()
 
