@@ -23,8 +23,10 @@ async def migrate_table(table_cls):
         rows = result.scalars().all()
         for row in rows:
             # создаем новый экземпляр для PostgreSQL
-            new_row = table_cls(**row.__dict__)
-            dst.add(new_row)
+            
+            data = {key: value for key, value in row.__dict__.items() if key != "_sa_instance_state"}
+            new_row = table_cls(**data)
+
         await dst.commit()
     print(f"✅ Готово: {table_cls.__tablename__} ({len(rows)} записей)")
 
