@@ -10,7 +10,7 @@ sqlite_session = sessionmaker(sqlite_engine, class_=AsyncSession, expire_on_comm
 
 # PostgreSQL получатель
 pg_engine = create_async_engine(
-    "postgresql+asyncpg://nikita:123546@localhost:5432/data", echo=True
+    "postgresql+asyncpg://nikita:123456@localhost:5432/data", echo=True
 )
 pg_session = sessionmaker(pg_engine, class_=AsyncSession, expire_on_commit=False)
 
