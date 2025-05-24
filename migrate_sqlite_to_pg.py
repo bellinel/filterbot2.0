@@ -26,6 +26,7 @@ async def migrate_table(table_cls):
             
             data = {key: value for key, value in row.__dict__.items() if key != "_sa_instance_state"}
             new_row = table_cls(**data)
+            dst.add(new_row)
 
         await dst.commit()
     print(f"✅ Готово: {table_cls.__tablename__} ({len(rows)} записей)")
